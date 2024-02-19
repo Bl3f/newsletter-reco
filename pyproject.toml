@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "newsletter-reco"
+version = "0.1.0"
+description = ""
+authors = ["Christophe Blefari <christophe.blefari@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10,<3.13"
+dlt = {extras = ["duckdb", "parquet"], version = "^0.4.4"}
+pyjwt = "^2.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
