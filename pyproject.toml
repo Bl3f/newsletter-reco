@@ -11,6 +11,10 @@ dlt = {extras = ["duckdb", "parquet"], version = "^0.4.4"}
 pyjwt = "^2.8.0"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+isort = "^5.13.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
