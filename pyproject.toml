@@ -7,13 +7,25 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.13"
-dlt = {extras = ["duckdb", "parquet"], version = "^0.4.4"}
+dlt = {extras = ["cli", "duckdb", "parquet"], version = "^0.4.4"}
 pyjwt = "^2.8.0"
+numpy = "^1.26.4"
+pandas = "^2.2.0"
+sqlglot = "^22.0.1"
+boto3 = "^1.34.50"
 
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
 isort = "^5.13.2"
+jupyter = "^1.0.0"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+profile = "black"
 
 [build-system]
 requires = ["poetry-core"]

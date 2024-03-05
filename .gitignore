@@ -9,3 +9,6 @@ secrets.toml
 *.duckdb
 *.wal
 .idea/
+*.ipynb
+*.duckdb*
+*.parquet

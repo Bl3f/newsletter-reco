@@ -1,0 +1,31 @@
+name: Run ghostdb pipeline from ghost.py
+'on':
+  schedule:
+  - cron: 0 12 * * 3
+  workflow_dispatch: null
+env:
+  ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@v3
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10.x
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: false
+    - uses: syphar/restore-virtualenv@v1
+      id: cache-virtualenv
+      with:
+        requirement_files: poetry.lock
+    - uses: syphar/restore-pip-download-cache@v1
+      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+    - run: poetry install
+      if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+    - name: Run pipeline script
+      run: python pipeline.py
