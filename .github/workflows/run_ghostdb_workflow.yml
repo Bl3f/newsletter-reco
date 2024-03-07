@@ -11,6 +11,11 @@ env:
   S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
   S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
   S3_REGION_NAME: ${{ secrets.S3_REGION_NAME }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_USER: ${{ secrets.DB_USER }}
 
 jobs:
   run_pipeline:
