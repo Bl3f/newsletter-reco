@@ -1,3 +1,6 @@
+DELETE FROM pg_prod.public.ghostapi_recommendation
+WHERE week_number = (SELECT MAX(week_number) FROM recommendation);
+
 INSERT INTO pg_prod.public.ghostapi_recommendation BY NAME (
     SELECT
         r.member_id AS user_id,
