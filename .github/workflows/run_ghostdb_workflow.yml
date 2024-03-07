@@ -3,8 +3,14 @@ name: Run ghostdb pipeline from ghost.py
   schedule:
   - cron: 0 12 * * 3
   workflow_dispatch: null
+
 env:
   ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
+  S3_BUCKET: ${{ secrets.S3_BUCKET }}
+  S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
+  S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
+  S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+
 jobs:
   run_pipeline:
     runs-on: ubuntu-latest
