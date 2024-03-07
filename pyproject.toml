@@ -13,7 +13,7 @@ numpy = "^1.26.4"
 pandas = "^2.2.0"
 sqlglot = "^22.0.1"
 boto3 = "^1.34.50"
-yato-lib = "^0.0.6"
+yato-lib = "0.0.7"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -17,6 +17,7 @@ if __name__ == "__main__":
         s3_access_key=os.getenv("S3_ACCESS_KEY"),
         s3_secret_key=os.getenv("S3_SECRET_KEY"),
         s3_endpoint_url=os.getenv("S3_ENDPOINT"),
+        s3_region_name=os.getenv("S3_REGION_NAME"),
     )
 
     yato.restore(overwrite=True)
