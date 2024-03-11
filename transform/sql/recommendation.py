@@ -7,6 +7,8 @@ from yato import Transformation
 
 def recommendation(df):
     member_ids = df.member_id.unique()
+    already_recommended = df.already_recommended
+    df = df.drop("already_recommended", axis=1)
 
     def find_member_id(value):
         return np.where(member_ids == value)[0][0]
@@ -35,6 +37,7 @@ def recommendation(df):
             df[df.index.isin(similar_users.index)]
             .dropna(axis=1, how="all")
             .drop(picked_user_clicked, axis=1, errors="ignore")
+            .drop(already_recommended.iloc[i], axis=1, errors="ignore")
             .iloc[:, 1:]
         )
 
