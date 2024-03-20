@@ -4,3 +4,10 @@ resource "scaleway_object_bucket" "nr-prod" {
     env = "prod"
   }
 }
+
+resource "scaleway_object_bucket" "nr-dev" {
+  name = "nr-dev"
+  tags = {
+    env = "dev"
+  }
+}

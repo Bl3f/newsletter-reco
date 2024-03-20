@@ -7,8 +7,6 @@ from ghost import ghost_source, remove_columns
 
 if __name__ == "__main__":
     DATABASE_FILE_NAME = "ghostdb.duckdb"
-    DB_FOLDER = "db/"
-    BUCKET_NAME = "nr-prod"
 
     yato = Yato(
         database_path="ghostdb.duckdb",
