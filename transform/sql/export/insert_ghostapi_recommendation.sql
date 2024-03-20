@@ -14,7 +14,6 @@ INSERT INTO pg_prod.public.ghostapi_recommendation BY NAME (
     FROM recommendation r
     LEFT JOIN stg_links l ON r.reco = l.link__to
     LEFT JOIN stg_members u ON r.member_id = u.member_id
-    WHERE l.blefapi_link_id IS NOT NULL
 );
 
 SELECT 'ok';
