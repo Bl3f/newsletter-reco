@@ -1,5 +1,5 @@
-DELETE FROM pg_prod.public.ghostapi_recommendation
-WHERE week_number = (SELECT MAX(week_number) FROM recommendation);
+--DELETE FROM pg_prod.public.ghostapi_recommendation
+--WHERE week_number = (SELECT MAX(week_number) FROM recommendation);
 
 INSERT INTO pg_prod.public.ghostapi_recommendation BY NAME (
     SELECT
@@ -14,6 +14,7 @@ INSERT INTO pg_prod.public.ghostapi_recommendation BY NAME (
     FROM recommendation r
     LEFT JOIN stg_links l ON r.reco = l.link__to
     LEFT JOIN stg_members u ON r.member_id = u.member_id
+    WHERE l.blefapi_link_id IS NOT NULL
 );
 
 SELECT 'ok';
